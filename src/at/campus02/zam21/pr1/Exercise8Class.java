@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Exercise8Class {
     public static void main(String[] args) {
         int[][] arr={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+
         String[] firstList={"Stefan","Anton","Monika","Viktoria","Nike"};
         String[] secondList={ "Maximilian","Severin","Viktoria","Markus","Kevin"};
         System.out.println("findeKleinsteZahl(arr) = " + findeKleinsteZahl(arr));
@@ -19,6 +20,16 @@ public class Exercise8Class {
         printArrString(myString);
 
 
+        int[][] mySmartphonesArray={{1,20},{5,60},{9,100},{13,140}};
+        int[]  myHandySales={14,140};
+        int[]  myHandySales2={15,150};
+        int[][] newArray;
+        System.out.println("oneSmartphoneSales(myHandySales,mySmartphonesArray) = " +Arrays.toString(oneSmartphoneSales(myHandySales,mySmartphonesArray)));
+        printArr(oneSmartphoneSales(myHandySales,mySmartphonesArray));
+        newArray=oneSmartphoneSales(myHandySales,mySmartphonesArray);
+        System.out.println("Eine neue Model dazu: Arrays.toString(myHandySales2) = " + Arrays.toString(myHandySales2));
+        oneSmartphoneSales(myHandySales2,newArray);
+        printArr(oneSmartphoneSales(myHandySales2,newArray));
     }
 
 
@@ -97,4 +108,20 @@ public class Exercise8Class {
         }
         return trostLooser;
     }
+
+    public static int[][] oneSmartphoneSales(int[] oneModell,int[][] arrayAllModell ) {
+         int[][] newArrayAllModell= new int[arrayAllModell.length+1][2];
+        for (int i = 0; i < arrayAllModell.length; i++) {
+            for (int j = 0; j < 2; j++) {
+                newArrayAllModell[i][j]=arrayAllModell[i][j];
+            }
+        }
+        if (oneModell.length!=0) {
+            newArrayAllModell[arrayAllModell.length][0]=oneModell[0];
+            newArrayAllModell[arrayAllModell.length][1]=oneModell[1];
+        }
+        return newArrayAllModell;
+    }
+
+
  }
