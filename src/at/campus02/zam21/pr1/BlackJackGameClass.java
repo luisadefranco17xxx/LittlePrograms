@@ -14,7 +14,7 @@ package at.campus02.zam21.pr1;
 public class BlackJackGameClass {
     public static void main(String[] args) {
         int[][] games = {{5,2,3,4}, {6,5,21,21},{6,5,21,23},{6,5,4,23}};
-        //int[][] games = {{6,5,21,23},{5,6,4,2}};
+
         int[] resut=new int[games[0].length];
         resut=blackjackWinner(games);
         printblackjackWinner(resut);
