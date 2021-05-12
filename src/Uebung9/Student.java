@@ -13,6 +13,14 @@ public class Student {
         this.age = age;
         this.department = department;
     }
+    public static void main(String[] args) {
+        System.out.println("args = " );
+
+        System.out.println(Student.findDepartmentByStudentName("Alan Turing"));
+        System.out.println(Student.findDepartmentByStudentName("Mary Kenneth Keller"));
+        System.out.println(Student.findDepartmentByStudentName("Alex"));
+
+    }
     public String getName() {
         return name;
     }

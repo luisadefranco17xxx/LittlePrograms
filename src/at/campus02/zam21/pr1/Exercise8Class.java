@@ -4,11 +4,12 @@ import java.util.Arrays;
 
 public class Exercise8Class {
     public static void main(String[] args) {
-        int[][] arr={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+        int[][] arr={{1,2,3,4},{5,6,7,8},{9,-1,11,12},{13,14,15,16}};
 
         String[] firstList={"Stefan","Anton","Monika","Viktoria","Nike"};
         String[] secondList={ "Maximilian","Severin","Viktoria","Markus","Kevin"};
         System.out.println("findeKleinsteZahl(arr) = " + findeKleinsteZahl(arr));
+        System.out.println("findeKleinsteZahlMath(arr) = " + findeKleinsteZahlMath(arr));
         printArr(arr);
         System.out.println("summeGegenDiagonale(arr) = " + summeGegenDiagonale(arr));
         System.out.println();
@@ -41,6 +42,21 @@ public class Exercise8Class {
             for (int j = 0; j < myArray[i].length; j++) {
                 if(myArray[i][j]<kleinsteZahl){
                     kleinsteZahl=myArray[i][j];
+                }
+            }
+        }
+
+        return kleinsteZahl;
+    }
+
+    public static int findeKleinsteZahlMath (int[][] myArray){
+        int kleinsteZahl=Math.min(myArray[0][0],myArray[0][1]);
+
+        for (int i = 0; i < myArray.length; i++) {
+            for (int j = 0; j < myArray[i].length-1; j++) {
+              
+               if (kleinsteZahl>Math.min(myArray[i][j],myArray[i][j+1])) {
+                   kleinsteZahl=Math.min(myArray[i][j],myArray[i][j+1]);
                 }
             }
         }

@@ -11,10 +11,15 @@ package at.campus02.zam21.pr1;
 // assume: every row has the same length and we do not know how many rows
 // if it is a draw -> nobody gets a poin for winning
 
+import java.util.Arrays;
+
 public class BlackJackGameClass {
     public static void main(String[] args) {
         int[][] games = {{5,2,3,4}, {6,5,21,21},{6,5,21,23},{6,5,4,23}};
 
+
+        System.out.println("Arrays.toString(games) = " + Arrays.toString(games));
+        System.out.println("Arrays.toString(games) = " + Arrays.toString(games));
         int[] resut=new int[games[0].length];
         resut=blackjackWinner(games);
         printblackjackWinner(resut);
